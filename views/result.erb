@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROCK, PAPER, SCISSORS</title>
+</head>
+<body>
+    <h1> JENG..RESULT !  </h1>
+    <p>Anyong! Enter Your Name Here: <%=@player_name %></p>
+        <% @result.each do |result| %>
+        <p>Player"s Choice: <%= result[:player_choice] %></p>
+        <p>Computer's Choice: <%= result[:computer_choice] %></p>
+        <p>Result: <%= result[:result] %></p>
+    <% end %>    
+</body>
+</html>
