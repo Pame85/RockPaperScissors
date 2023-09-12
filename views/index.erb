@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+    body {
+        background-color: powderblue;
+    }
+    h1   {
+        color: blue;
+        font-family: verdana;
+        font-size: 300%;
+        text-align: center;
+    }
+    p    {
+        color: purple;
+        font-family: courier;
+        font-size: 160%
+        border: 2px solid powderblue;
+        padding: 5px;
+        text-align: center;
+    }
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROCK, PAPER, SCISSORS</title>
+</head>
+<body>
+    <h1> Ga-Wi, Ba-Wi, Bo ! LETS PLAY ROCK PAPER SCISSORS!  </h1>
+    <h1 style="color:blue;">A blue Heading</h1>
+    <p>Anyong! Enter Your Name Here: <%=@player_name %></p>
+    <p style="color:green;">A red paragraph.</p>
+    <form action="/player" method="POST"></form style>
+    <form style="text-align:center;">
+        <input type="text" name="name">
+        <input type="submit" value="submit">
+    </form>  
+</body>
+</html>
