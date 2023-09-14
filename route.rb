@@ -2,28 +2,26 @@ require 'sinatra'
 
 def game(player, computer)
   if player == computer
-    outcome = "We win together!"
+    "We win together!"
   elsif player == "rock"
     if computer == "paper"
-      outcome = "Paper covers rock. You lose!"
+      "Paper covers rock. You lose!"
     elsif computer == "scissors"
-      outcome = "Rock smashes scissors. You win!"
+      "Rock smashes scissors. You win!"
     end
   elsif player == "paper"
     if computer == "scissors"
-      outcome = "Scissors cuts paper. You lose!"
+      "Scissors cuts paper. You lose!"
     elsif computer == "rock"
-      outcome = "Paper covers rock. You win!"
+      "Paper covers rock. You win!"
     end
   elsif player == "scissors"
     if computer == "rock"
-      outcome = "Rock smashes scissors. You lose!"
+      "Rock smashes scissors. You lose!"
     elsif computer == "paper"
-      outcome = "Scissors cut paper. You win!"
+      "Scissors cut paper. You win!"
     end
   end
-  
-  return outcome
 end
 
 get '/' do
@@ -41,8 +39,18 @@ end
 post '/result' do
   @player_name = params[:name]
   @player_choice = params[:choice]
-  @computer_choice = %w[Rock Paper Scissors].sample
+  @computer_choice = %w[rock paper scissors].sample
+
+  @outcome = game(@player_choice, @computer_choice)
+
+  puts "Player: #{@player_choice}"
+  puts "Computer: #{@computer_choice}"
+  puts "Outcome: #{@outcome}"
+
   @result = [{ player_choice: @player_choice, computer_choice: @computer_choice, outcome: @outcome }]
+
+  p @result
+  puts @result.class
   erb :result
 end
 
